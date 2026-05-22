@@ -1,0 +1,2 @@
+# Proxy list will be auto-populated by download-proxy command
+# Run: node main.js --download-proxy
