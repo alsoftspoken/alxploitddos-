@@ -1,10 +1,21 @@
 # alxploitddos-
 ALXPLOIT
 
-## 🔧 Instalasi
+## 📋 Perintah dalam Tool
 
-1. Clone repo
-2. Jalankan `npm install`
-3. **Download proxy (WAJIB):**
-   ```bash
-   node main.js --download-proxy
+| Perintah | Fungsi |
+|----------|--------|
+| `attack <url> <durasi>` | Mulai serangan DDoS |
+| `stop` | Hentikan serangan |
+| `download-proxy` | Download proxy terbaru |
+| `status` | Lihat status serangan |
+| `exit` | Keluar tool |
+
+## ⚠️ Peringatan
+
+**Hanya untuk edukasi dan testing server sendiri.**  
+Menyalahgunakan alat ini untuk menyerang pihak lain adalah **ILEGAL**.
+
+## 📜 Lisensi
+
+MIT License - lihat file [LICENSE](LICENSE)
