@@ -1,2 +1,15 @@
-# Proxy list will be auto-populated by download-proxy command
-# Run: node main.js --download-proxy
+# ============================================================
+# PROXY LIST FOR ALXPLOIT DDOS TOOLKIT
+# ============================================================
+# Cara mengisi:
+# 1. Jalankan tool lalu ketik 'download-proxy' (otomatis download)
+# 2. Atau isi manual dengan format IP:PORT
+# 3. Setiap proxy dalam 1 baris
+# ============================================================
+# Contoh proxy:
+# 123.45.67.89:8080
+# 98.76.54.32:3128
+# 11.22.33.44:80
+# ============================================================
+# JALANKAN 'download-proxy' UNTUK DOWNLOAD OTOMATIS
+# ============================================================
