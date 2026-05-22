@@ -1,12 +1,12 @@
 {
-  "name": "alxploit-ddos-toolkit",
+  "name": "alxploit-ddos-apocalypse",
   "version": "4.4.4",
-  "description": "Ultimate DDoS Toolkit - Multi Method Attack dengan Proxy Support | Created by ALXPLOIT - ◥𝗗𝗥𝟰𝗞𝟰𝟳𝗛◤ ◥𝗧𝗘𝗔𝗠◤",
-  "main": "attack.js",
+  "description": "Ultimate DDoS Toolkit - Apocalypse Edition | Bypass Cloudflare, WAF, LiteSpeed | Created by ALXPLOIT - ◥𝗗𝗥𝟰𝗞𝟰𝟳𝗛◤ ◥𝗧𝗘𝗔𝗠◤",
+  "main": "main.js",
   "type": "module",
   "scripts": {
-    "start": "node attack.js",
-    "dev": "node --trace-warnings attack.js"
+    "start": "node main.js",
+    "attack": "node main.js"
   },
   "keywords": [
     "ddos",
@@ -15,22 +15,21 @@
     "udp-flood",
     "tcp-flood",
     "slowloris",
-    "rudy-attack",
+    "cloudflare-bypass",
+    "waf-bypass",
+    "litespeed",
     "cybersecurity",
-    "penetration-testing"
+    "alxploit",
+    "dr4k47h"
   ],
   "author": "ALXPLOIT - ◥𝗗𝗥𝟰𝗞𝟰𝟳𝗛◤ ◥𝗧𝗘𝗔𝗠◤",
   "license": "MIT",
-  "dependencies": {
-    "axios": "^1.8.0",
-    "https-proxy-agent": "^7.0.0",
-    "socks-proxy-agent": "^8.0.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alsoftspoken/alxploitddos-"
   },
   "engines": {
     "node": ">=16.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alsoftspoken/alxploittddo"
-  }
+  "dependencies": {}
 }
