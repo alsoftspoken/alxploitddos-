@@ -1,22 +1,3 @@
-
-```markdown
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=900&size=40&pause=1000&color=FF0000&center=true&vCenter=true&random=false&width=600&height=70&lines=ALXPLOIT+DDOS;APOCALYPSE+EDITION;SERVER+KILLER" alt="Typing SVG" />
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Version-4.4.4-red?style=for-the-badge&logo=github"/>
-  <img src="https://img.shields.io/badge/Node.js-16%2B-green?style=for-the-badge&logo=node.js"/>
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge&logo=mit"/>
-  <img src="https://img.shields.io/badge/Platform-Termux%20%7C%20Linux%20%7C%20VPS-blue?style=for-the-badge&logo=linux"/>
-</p>
-
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=24&duration=3000&pause=500&color=FF3333&center=true&vCenter=true&random=false&width=600&height=40&lines=%F0%9F%92%80+NO+MERCY+%7C+NO+ESCAPE+%7C+TOTAL+ANNIHILATION+%F0%9F%92%80" alt="Subtitle" />
-</p>
-
----
-
 ## ☠️ **DESCRIPTION**
 
 **ALXPLOIT DDOS - APOCALYPSE EDITION** adalah alat DDoS paling mematikan dengan kemampuan **bypass Cloudflare, WAF, dan LiteSpeed**. Dirancang untuk stress testing server sendiri dan penelitian keamanan siber.
@@ -50,8 +31,8 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/alsoftspoken/alxploit-ddos.git
-cd alxploit-ddos
+git clone https://github.com/alsoftspoken/alxploitddos-.git
+cd alxploitddos-
 
 # Install Node.js (if not installed)
 pkg install nodejs -y
