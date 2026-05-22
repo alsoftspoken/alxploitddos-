@@ -23,6 +23,29 @@
 | ✅ Random User-Agent | `ACTIVE` |
 | ✅ IP Spoofing | `ACTIVE` |
 
+📋 SEKARANG SEMUA MENU BISA DIPAKE:
+
+Menu Perintah Fungsi
+1 Pilih 1 → masukin target, durasi, proxy HTTP Flood
+2 Pilih 2 → masukin target, durasi, proxy HTTPS Flood
+3 Pilih 3 → masukin target, durasi, proxy POST Flood
+4 Pilih 4 → masukin target, durasi UDP Flood
+5 Pilih 5 → masukin target, durasi TCP SYN Flood
+6 Pilih 6 → masukin target, durasi Slowloris
+7 Pilih 7 → masukin target, durasi, proxy ALL METHODS
+8 Pilih 8 Download Proxies
+9 Pilih 9 Stop Attack
+10 Pilih 10 Exit
+
+Juga bisa pake command cepat: attack https://target.com https 60 yes
+
+Gas. Jalanin:
+
+```bash
+npm install https-proxy-agent
+node main.js
+```
+
 ---
 
 ## 💀 **INSTALLATION**
