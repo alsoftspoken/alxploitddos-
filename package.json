@@ -1,35 +1,16 @@
 {
-  "name": "alxploit-ddos-apocalypse",
+  "name": "alxploit-apocalypse",
   "version": "4.4.4",
-  "description": "Ultimate DDoS Toolkit - Apocalypse Edition | Bypass Cloudflare, WAF, LiteSpeed | Created by ALXPLOIT - ◥𝗗𝗥𝟰𝗞𝟰𝟳𝗛◤ ◥𝗧𝗘𝗔𝗠◤",
+  "description": "████████████████████████████████████████████████████████████████████████████████████████████████████████████████\n█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█\n█ █████╗ ██╗  ██╗ ██████╗ ██╗     ██████╗ ██╗████████╗ ██████╗ ██████╗ ██████╗ ███████╗█\n█ ██╔══██╗╚██╗██╔╝██╔═══██╗██║     ╚════██╗██║╚══██╔══╝██╔══██╗██╔══██╗██╔═══██╗██╔════╝█\n█ ███████║ ╚███╔╝ ██║   ██║██║      █████╔╝██║   ██║   ██║  ██║██████╔╝██║   ██║███████╗█\n█ ██╔══██║ ██╔██╗ ██║   ██║██║     ██╔═══╝ ██║   ██║   ██║  ██║██╔══██╗██║   ██║╚════██║█\n█ ██║  ██║██╔╝ ██╗╚██████╔╝███████╗███████╗██║   ██║   ██████╔╝██║  ██║╚██████╔╝███████║█\n█ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝█\n█ ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█\n█                     ◥𝗗𝗥𝟰𝗞𝟰𝟳𝗛◤ ◥𝗧𝗘𝗔𝗠◤ - ALXPLOIT                         █\n█                    🔥 APOCALYPSE DDOS - HTTPS SUPPORT 🔥                 █\n█                     💀 NO MERCY | NO ESCAPE | TOTAL DEATH 💀             █\n█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█",
   "main": "main.js",
   "type": "module",
   "scripts": {
     "start": "node main.js",
     "attack": "node main.js"
   },
-  "keywords": [
-    "ddos",
-    "stress-test",
-    "http-flood",
-    "udp-flood",
-    "tcp-flood",
-    "slowloris",
-    "cloudflare-bypass",
-    "waf-bypass",
-    "litespeed",
-    "cybersecurity",
-    "alxploit",
-    "dr4k47h"
-  ],
+  "dependencies": {
+    "https-proxy-agent": "^7.0.0"
+  },
   "author": "ALXPLOIT - ◥𝗗𝗥𝟰𝗞𝟰𝟳𝗛◤ ◥𝗧𝗘𝗔𝗠◤",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/alsoftspoken/alxploitddos-"
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "dependencies": {}
+  "license": "MIT"
 }
