@@ -103,6 +103,8 @@ Thumbs.db
 
 # Proxy file (isi asli, jangan di-commit)
 proxy.txt
+proxy_clean.txt
+proxy.txt.bak
 
 # Log files
 *.log
@@ -118,3 +120,8 @@ logs/
 .vscode/
 .idea/
 *.sublime-*
+
+# Backup files
+*.bak
+*.backup
+*~
