@@ -1,17 +1,36 @@
 {
-  "name": "ddos-tool",
-  "version": "1.0.0",
-  "description": "Alat testing HTTP Flood untuk edukasi - Gunakan hanya di server sendiri",
-  "main": "main.js",
+  "name": "alxploit-ddos-toolkit",
+  "version": "4.4.4",
+  "description": "Ultimate DDoS Toolkit - Multi Method Attack dengan Proxy Support | Created by ALXPLOIT - ◥𝗗𝗥𝟰𝗞𝟰𝟳𝗛◤ ◥𝗧𝗘𝗔𝗠◤",
+  "main": "attack.js",
   "type": "module",
   "scripts": {
-    "start": "node main.js"
+    "start": "node attack.js",
+    "dev": "node --trace-warnings attack.js"
   },
+  "keywords": [
+    "ddos",
+    "stress-test",
+    "http-flood",
+    "udp-flood",
+    "tcp-flood",
+    "slowloris",
+    "rudy-attack",
+    "cybersecurity",
+    "penetration-testing"
+  ],
+  "author": "ALXPLOIT - ◥𝗗𝗥𝟰𝗞𝟰𝟳𝗛◤ ◥𝗧𝗘𝗔𝗠◤",
+  "license": "MIT",
   "dependencies": {
     "axios": "^1.8.0",
     "https-proxy-agent": "^7.0.0",
     "socks-proxy-agent": "^8.0.0"
   },
-  "author": "ALXPLOIT - ◥𝗗𝗥𝟰𝗞𝟰𝟳𝗛◤ ◥𝗧𝗘𝗔𝗠◤",
-  "license": "MIT"
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alsoftspoken/alxploittddo"
+  }
 }
