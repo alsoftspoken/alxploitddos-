@@ -6,11 +6,35 @@
   "type": "module",
   "scripts": {
     "start": "node main.js",
-    "attack": "node main.js"
+    "attack": "node main.js",
+    "dev": "node --trace-warnings main.js"
+  },
+  "keywords": [
+    "ddos",
+    "stress-test",
+    "http-flood",
+    "https-flood",
+    "udp-flood",
+    "tcp-flood",
+    "slowloris",
+    "cloudflare-bypass",
+    "waf-bypass",
+    "litespeed-killer",
+    "cybersecurity",
+    "alxploit",
+    "dr4k47h"
+  ],
+  "author": "ALXPLOIT - ◥𝗗𝗥𝟰𝗞𝟰𝟳𝗛◤ ◥𝗧𝗘𝗔𝗠◤",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alsoftspoken/alxploitddos-"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   },
   "dependencies": {
     "https-proxy-agent": "^7.0.0"
   },
-  "author": "ALXPLOIT - ◥𝗗𝗥𝟰𝗞𝟰𝟳𝗛◤ ◥𝗧𝗘𝗔𝗠◤",
-  "license": "MIT"
+  "devDependencies": {}
 }
