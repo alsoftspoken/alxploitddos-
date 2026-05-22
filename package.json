@@ -1,0 +1,17 @@
+{
+  "name": "ddos-tool",
+  "version": "1.0.0",
+  "description": "Alat testing HTTP Flood untuk edukasi - Gunakan hanya di server sendiri",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "axios": "^1.8.0",
+    "https-proxy-agent": "^7.0.0",
+    "socks-proxy-agent": "^8.0.0"
+  },
+  "author": "ALXPLOIT - ◥𝗗𝗥𝟰𝗞𝟰𝟳𝗛◤ ◥𝗧𝗘𝗔𝗠◤",
+  "license": "MIT"
+}
